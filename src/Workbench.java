@@ -15,9 +15,9 @@ import java.util.Scanner;
 
 public class Workbench
 {
-	static String filePath = "/Users/redecheck/fault-examples";
+	static String webpagesPath = "/Users/redecheck/fault-examples";
 	static String reportsPath = "/Users/redecheck/reports";
-	//static String filePath = "C:\\GitSpace\\BitBucket\\fault-examples";
+	//static String webpagesPath = "C:\\GitSpace\\BitBucket\\fault-examples";
 	//static String reportsPath = "C:\\GitSpace\\BitBucket\\reports";
 	static Scanner reader = new Scanner(System.in);  
 	static ArrayList<Webpage> subsetPages = new ArrayList<Webpage>(); //for testing just specific sites
@@ -37,7 +37,7 @@ public class Workbench
         String runTimeCSV ="";
         long startTime = System.nanoTime();
         Assist.startTime();
-		InputManager inM = new InputManager(filePath);
+		InputManager inM = new InputManager(webpagesPath);
 		inM.findFile("fault-report.txt", new File(reportsPath));
 		inM.parseRedecheckOutputFiles();		
 		allPages = inM.webpages;
